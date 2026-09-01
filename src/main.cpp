@@ -1,9 +1,10 @@
-#include "Editor.hpp"
+#include "Engine.hpp"
 #include <iostream>
 int main() {
-    Editor editor;
+    Engine editor;
     editor.insertLine("alpha");
     editor.insertLine("bravo");
-    std::cout << "lines=" << editor.lineCount() << "\n";
+    editor.undo();
+    std::cout << "lines after undo: " << editor.lineCount() << "\n";
     return 0;
 }
