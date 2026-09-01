@@ -1,10 +1,9 @@
-#include "DoublyLinkedList.hpp"
+#include "Editor.hpp"
 #include <iostream>
-#include <string>
 int main() {
-    DoublyLinkedList<std::string> lines;
-    lines.pushBack("first line");
-    lines.pushBack("second line");
-    std::cout << "DLL size: " << lines.size() << "\n";
+    Editor editor;
+    editor.insertLine("alpha");
+    editor.insertLine("bravo");
+    std::cout << "lines=" << editor.lineCount() << "\n";
     return 0;
 }
