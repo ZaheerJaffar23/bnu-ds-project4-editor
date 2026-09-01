@@ -66,13 +66,14 @@ inline BracketReport checkBrackets(const DoublyLinkedList<std::string>& lines) {
                         {lineNo, col + 1, c, matchingOpen(c), "closing bracket with no opener"});
                     return report;
                 }
-                BracketOpen top = open.pop();
+                const BracketOpen& top = open.top();
                 if (top.ch != matchingOpen(c)) {
                     report.balanced = false;
-                    report.issues.push_back({lineNo, col + 1, c, matchingClose(top.ch),
-                                             "mismatched closing bracket"});
+                    report.issues.push_back({top.line, top.column, top.ch, matchingClose(top.ch),
+                                             "unclosed opening bracket"});
                     return report;
                 }
+                open.pop();
             }
         }
     }
