@@ -1,0 +1,17 @@
+# Build artifacts
+bin/
+obj/
+*.o
+*.out
+editor
+generate_manuscript
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
+
+# Keep official course data (data/sample, data/full); ignore leftover generated files
+data/manuscript.txt
